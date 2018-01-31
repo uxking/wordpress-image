@@ -11,5 +11,6 @@ Start the container via:
 
 >Apache is listening on port 80 of the container, so you will need to expose port 80.
 
->Ports are in the format of: `<localhost port>:<container port>`
+>Ports are in the format of: `<localhost port>:<container port>` example: `8080:80`
+
 
