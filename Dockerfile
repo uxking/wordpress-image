@@ -11,8 +11,7 @@ RUN tar xvzf wordpress.latest.tar.gz --strip-components=1 -C /var/www/localhost/
 RUN rm /var/www/localhost/htdocs/index.html
 
 RUN mkdir /run/apache2
-#RUN rc-service apache2 start
+
 RUN rc-update add apache2
 
 ENTRYPOINT [ "httpd", "-D", "FOREGROUND" ]
-#CMD /usr/sbin/httpd -k start && /bin/sh
