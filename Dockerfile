@@ -3,7 +3,7 @@ FROM alpine
 LABEL maintainer="michael@hayslip.info"
 
 RUN apk update
-RUN apk add --progress vim wget iputils net-tools apache2 php5-apache2 mysql-client
+RUN apk add --progress vim wget iputils net-tools apache2 php5-apache2 mysql-client php5-mysql
 RUN apk add openrc --no-cache
 
 RUN wget -O wordpress.latest.tar.gz https://wordpress.org/latest.tar.gz
