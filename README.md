@@ -13,4 +13,6 @@ Start the container via:
 
 >Ports are in the format of: `<localhost port>:<container port>` example: `8080:80`
 
-### No DB is included. Choose an approriate host for the DB.
+>Point your browser to the http://host:port/ and run the setup.
+
+#### No DB is included. Choose an approriate host for the DB.
