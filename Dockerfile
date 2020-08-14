@@ -11,7 +11,7 @@ RUN wget -O wordpress.latest.tar.gz https://wordpress.org/latest.tar.gz
 RUN tar xvzf wordpress.latest.tar.gz --keep-old-files --strip-components=1 -C /var/www/localhost/htdocs/
 RUN rm /var/www/localhost/htdocs/index.html
 
-RUN mkdir /run/apache2
+#RUN mkdir /run/apache2
 
 RUN rc-update add apache2
 
