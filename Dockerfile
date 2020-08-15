@@ -9,9 +9,9 @@ RUN apk --update add tar
 
 RUN rc-update add apache2
 
-USER apache
 RUN wget -O wordpress.latest.tar.gz https://wordpress.org/latest.tar.gz
 RUN tar xvzf wordpress.latest.tar.gz --keep-old-files --strip-components=1 -C /var/www/localhost/htdocs/
 RUN rm /var/www/localhost/htdocs/index.html
+RUN chown -R apache:www-data /var/www/localhost/htdocs
 
 ENTRYPOINT [ "httpd", "-D", "FOREGROUND" ]
