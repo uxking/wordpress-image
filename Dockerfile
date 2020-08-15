@@ -7,13 +7,11 @@ RUN apk add --progress vim wget iputils net-tools apache2 php7-common php7-apach
 RUN apk add openrc --no-cache
 RUN apk --update add tar
 
+RUN rc-update add apache2
+
+USER apache
 RUN wget -O wordpress.latest.tar.gz https://wordpress.org/latest.tar.gz
 RUN tar xvzf wordpress.latest.tar.gz --keep-old-files --strip-components=1 -C /var/www/localhost/htdocs/
 RUN rm /var/www/localhost/htdocs/index.html
-
-#RUN mkdir /run/apache2
-
-RUN rc-update add apache2
-RUN chown -R apache:www-data /var/www
 
 ENTRYPOINT [ "httpd", "-D", "FOREGROUND" ]
