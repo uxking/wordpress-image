@@ -14,6 +14,6 @@ RUN rm /var/www/localhost/htdocs/index.html
 #RUN mkdir /run/apache2
 
 RUN rc-update add apache2
-
+RUN chown -R apache:www-data /var/www
 
 ENTRYPOINT [ "httpd", "-D", "FOREGROUND" ]
